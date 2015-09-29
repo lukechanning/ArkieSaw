@@ -56,18 +56,6 @@ function Arkiesaw_PhpVersionCheck() {
 }
 
 
-/**
- * Initialize internationalization (i18n) for this plugin.
- * References:
- *      http://codex.wordpress.org/I18n_for_WordPress_Developers
- *      http://www.wdmac.com/how-to-create-a-po-language-translation#more-631
- * @return void
- */
-function Arkiesaw_i18n_init() {
-    $pluginDir = dirname(plugin_basename(__FILE__));
-    load_plugin_textdomain('arkiesaw', false, $pluginDir . '/languages/');
-}
-
 
 //////////////////////////////////
 // Run initialization
@@ -83,3 +71,9 @@ if (Arkiesaw_PhpVersionCheck()) {
     include_once('arkiesaw_init.php');
     Arkiesaw_init(__FILE__);
 }
+
+/////////////////////////////
+// Load our custom elements
+////////////////////////////
+
+include_once('arkiesaw_custom.php');
