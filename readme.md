@@ -1,5 +1,5 @@
 === ArkieSaw ===
-Contributors: <a href="http://routerchowder.com"></a>
+Contributors: <a href="http://routerchowder.com">Luke Patrick</a>
 Donate link:
 Tags:
 License: GPLv3
