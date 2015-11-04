@@ -1,0 +1,53 @@
+.sort-links {
+    display: block;
+    position: relative;
+    float: left;
+    border-bottom: 1px solid #4FA65D;
+    box-sizing: content-box;
+    margin-bottom: 3rem;
+}
+
+.sort-link {
+    float: left;
+    list-style: none;
+    padding: 10px;
+    border-bottom: 1px solid transparent;
+}
+
+.sort-link:first-of-type {
+    padding-left: 0;
+}
+
+.sort-link:hover {
+    border-bottom: 1px solid #4FA65D;
+}
+
+.sort-link a {
+    color: #4FA65D;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/*Let's style those cards */
+
+.member-card {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: rgba(25,25,25,0.1);
+    border-radius: 5px;
+    box-shadow: 0 2px 2px rgba(25,25,25,0.25);
+}
+
+.member-image img {
+    border: 5px solid #FFF;
+}
+
+.member-text {
+    padding: 5px;
+}
+
+.member-text h4 {
+    border-bottom: 2px solid rgba(25,25,25,0.35);
+    padding-bottom: 3px;
+}

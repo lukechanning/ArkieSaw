@@ -153,5 +153,6 @@ add_action( 'save_post', 'address_information_save' );
 	Usage: address_information_get_meta( 'address_information_postal_code' )
 */
 
+//Load the custom Raphael stuff
 
 ?>
