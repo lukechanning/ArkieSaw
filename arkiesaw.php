@@ -142,18 +142,24 @@ add_action( 'plugins_loaded', array( 'templaterCore', 'get_instance' ) );
 
 include_once('arkiesaw_custom.php');
 
-
-//Load our custom stylesheets
+  ////////////////////////////////
+ //// Load our custom sheets ///
+//////////////////////////////
 
 function arkie_scripts() 
 {
+    
+    //Register all our shcripts
     wp_register_style( 'member', plugins_url( '/css/member.css', __FILE__ ) );
+    wp_register_script( 'raphael', plugins_url('/js/raphael.min.js', __FILE__ ), array('jquery'), '', true );
+    wp_register_script( 'map', plugins_url('/js/map.js', __FILE__ ), array('jquery'), '', true );
+    wp_register_script( 'map', plugins_url('/js/members.js', __FILE__ ), array('jquery'), '', true );
     
+    //Equeue said shcripts
     wp_enqueue_style('member');
-    
-    wp_enqueue_script( 'raphael', plugins_url('/js/raphael.js', __FILE__ ), '', '', true );
-    
-    wp_enqueue_script( 'map', plugins_url('/js/map.js', __FILE__ ), '', '', true );
+    wp_enqueue_script('raphael');
+    wp_enqueue_script('map');
+    wp_enqueue_script('members');
 }
 
 add_action('wp_enqueue_scripts', 'arkie_scripts');
