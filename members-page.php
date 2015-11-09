@@ -15,13 +15,13 @@ function area_links() {
     ?>
 	<div class="member-filter">
 		<ul class="sort-links">
-	    	<li id="filter--all" class="filter sort-link active" data-filter="*">
-	    		<?php _e( 'All', 'arkiesaw' ) ?>
-	    	</li>
+	    	<!--
+	    	<li id="filter--all" class="filter sort-link active" data-filter="*"><?php //_e( 'All', 'arkiesaw' ) ?></li>
+	    	-->
 	    <?php
 	    if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) :
 	        foreach ( $terms as $term ) {
-	        	echo '<li data-filter=".'. $term->slug.'" class=" filter sort-link"><a href="' . get_term_link( $term ) . '" title="' . sprintf( __( 'View all post filed under %s', 'arkiesaw' ), $term->name ) . '">' . $term->name . '</a></li>';
+	        	echo '<li data-filter=".'. $term->slug.'" class=" filter sort-link"><a id="'. $term->slug.'" href="' . get_term_link( $term ) . '" title="' . sprintf( __( 'View all post filed under %s', 'arkiesaw' ), $term->name ) . '">' . $term->name . '</a></li>';
 	        }
 	    endif;
 	    ?>
@@ -64,7 +64,6 @@ function cd_goh_loop() {
 	    }
 	    
 		if ($i % 2 == 0) :
-	    	echo '<h3>Test text</h3>';
 			$filtering_links[] = "first";
 		endif;
 	                        
