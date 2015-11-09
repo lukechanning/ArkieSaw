@@ -77,7 +77,7 @@ if (Arkiesaw_PhpVersionCheck()) {
 /////////////////////////////
 
 /* Add custom landing page template
-------------------------------------- */
+------------------------
 class templaterCore {
         protected $plugin_slug;
         private static $instance;
@@ -135,6 +135,8 @@ class templaterCore {
         } 
 } 
 add_action( 'plugins_loaded', array( 'templaterCore', 'get_instance' ) );
+
+------------- */
 
 /////////////////////////////
 // Load our custom elements

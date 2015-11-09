@@ -79,6 +79,19 @@ function arkiesaw_taxonomy_register() {
 }
 add_action( 'init', 'arkiesaw_taxonomy_register', 0 );
 
+//Pull in the custom post type archive for our members
+function get_custom_post_type_template( $archive_template ) {
+     global $post;
+	
+     if ( is_post_type_archive ( 'member' ) ) {
+     	remove_action( 'genesis_loop', 'genesis_do_loop' );
+        $archive_template = dirname( __FILE__ ) . '/members-page.php';
+     }
+     return $archive_template;
+}
+
+add_filter( 'archive_template', 'get_custom_post_type_template' ) ;
+
 //Let's make sure we get some address information to use for generating a static map
 
 function address_information_get_meta( $value ) {
@@ -90,7 +103,7 @@ function address_information_get_meta( $value ) {
 	} else {
 		return false;
 	}
-}
+};
 
 function address_information_add_meta_box() {
 	add_meta_box(
