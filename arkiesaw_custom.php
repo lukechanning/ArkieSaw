@@ -92,6 +92,20 @@ function get_custom_post_type_template( $archive_template ) {
 
 add_filter( 'archive_template', 'get_custom_post_type_template' ) ;
 
+//Pull in the custom taxonomy archive for our areas
+function get_custom_taxonomy_template($template) {
+	global $wp_query;
+	
+	$taxonomy = get_query_var('taxonomy');
+	
+	if (strpos($taxonomy,'area') !== false) {
+	  $taxonomy_template = dirname( __FILE__ ) . "/members-area.php";
+	   return $taxonomy_template;
+	}
+	return $template; 
+}
+add_filter( 'taxonomy_template', 'get_custom_taxonomy_template' );
+
 //Let's make sure we get some address information to use for generating a static map
 
 function address_information_get_meta( $value ) {
