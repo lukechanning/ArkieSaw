@@ -38,6 +38,7 @@ for (var i = 0; i < regions.length; i++) {
 
     // Showing off
     regions[i].mouseover(function(e){
+    	this.node.style.cursor = "pointer"; 
 		this.node.style.opacity = 0.7;
 		//document.getElementById('region-name').innerHTML = this.data('region');
 	});
@@ -48,6 +49,7 @@ for (var i = 0; i < regions.length; i++) {
 	
 	//Add a custom string to send to links
     regions[i].click(function(e){
+    	this.node.style.opacity = 0.5;
     	var link = this.data('id');
 	    $('#' + link + "-arkansas")[0].click();
 	});
