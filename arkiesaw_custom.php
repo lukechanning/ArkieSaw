@@ -106,7 +106,7 @@ function get_custom_taxonomy_template($template) {
 }
 add_filter( 'taxonomy_template', 'get_custom_taxonomy_template' );
 
-//Let's make sure we get some address information to use for generating a static map
+//Let's make sure we get some address information to use for g`enerating a static map
 
 function address_information_get_meta( $value ) {
 	global $post;

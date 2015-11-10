@@ -1,58 +1,83 @@
+//Colours 
+
+$green: #4FA65D;
+
+
+//Fix up the sort links
 .sort-links {
-    display: block;
-    position: relative;
-    float: left;
-    border-bottom: 1px solid #4FA65D;
-    box-sizing: content-box;
-    margin-bottom: 3rem;
+  display: block;
+  position: relative;
+  float: left;
+  border-bottom: 1px solid $green;
+  box-sizing: content-box;
+  margin-bottom: 3rem;
 }
 
 .sort-link {
-    float: left;
-    list-style: none;
-    padding: 10px;
-    border-bottom: 1px solid transparent;
-}
-
-.sort-link:first-of-type {
+  float: left;
+  list-style: none;
+  padding: 10px;
+  border-bottom: 1px solid transparent;
+  &:first-of-type {
     padding-left: 0;
-}
-
-.sort-link:hover {
-    border-bottom: 1px solid #4FA65D;
-}
-
-.sort-link a {
-    color: #4FA65D;
+  }
+  &:hover {
+    border-bottom: 1px solid $green;
+  }
+  a {
+    color: $green;
     font-size: 0.8rem;
     font-weight: 600;
     text-transform: uppercase;
+  }
 }
 
-/*Let's style those cards */
+//Let's style those cards
 
 .member-card {
-    padding: 1rem;
-    margin-bottom: 1rem;
-    background: rgba(25,25,25,0.1);
-    border-radius: 5px;
-    box-shadow: 0 2px 2px rgba(25,25,25,0.25);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: rgba(25, 25, 25, 0.1);
+  border-radius: 5px;
+  box-shadow: 0 2px 2px rgba(25, 25, 25, 0.25);
 }
 
 .member-image img {
-    border: 5px solid #FFF;
+  border: 5px solid #FFF;
 }
 
 .member-text {
-    padding: 5px;
-}
-
-.member-text h4 {
-    border-bottom: 2px solid rgba(25,25,25,0.35);
+  padding: 5px;
+  h4 {
+    border-bottom: 2px solid rgba(25, 25, 25, 0.35);
     padding-bottom: 3px;
+  }
 }
 
-/* Fix up our taxonomy archives to look a little better */
+//General styling for basic member page
 
-body.tax-area article {
+body.post-type-archive-member {
+  .sidebar {
+    display: none;
+  }
+  .content {
+    width: 100%;
+  }
+}
+
+
+// Fix up our taxonomy archives to look a little better
+
+body.tax-area {
+    article {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        background: rgba(25, 25, 25, 0.1);
+        border-radius: 5px;
+        box-shadow: 0 2px 2px rgba(25, 25, 25, 0.25);
+        .entry-title {
+            border-bottom: 2px solid rgba(25, 25, 25, 0.35);
+            padding-bottom: 10px;
+        }
+    }
 }

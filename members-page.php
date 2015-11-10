@@ -99,5 +99,9 @@ function cd_goh_loop() {
 <?php
 wp_reset_postdata();
 }
+
+remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
+remove_action( 'genesis_sidebar_alt', 'genesis_do_sidebar_alt' );
+
 genesis();
 ?>
