@@ -77,14 +77,14 @@ if (Arkiesaw_PhpVersionCheck()) {
 /////////////////////////////
 
 /* Add custom landing page template
-------------------------
-class templaterCore {
+------------------------ */
+class arkiesawTemplateCore {
         protected $plugin_slug;
         private static $instance;
         protected $templates;
         public static function get_instance() {
                 if( null == self::$instance ) {
-                        self::$instance = new templaterCore();
+                        self::$instance = new arkiesawTemplateCore();
                 } 
                 return self::$instance;
         } 
@@ -134,9 +134,9 @@ class templaterCore {
                 return $template;
         } 
 } 
-add_action( 'plugins_loaded', array( 'templaterCore', 'get_instance' ) );
+add_action( 'plugins_loaded', array( 'arkiesawTemplateCore', 'get_instance' ) );
 
-------------- */
+
 
 /////////////////////////////
 // Load our custom elements
