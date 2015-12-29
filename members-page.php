@@ -80,7 +80,7 @@ function cd_goh_loop() {
 		
 		<div class="two-thirds member-text">
 			<h4><a href="<?php get_the_permalink(); ?>"><?php the_title(); ?></a></h4>
-			<?php the_excerpt(); ?>
+			<?php arkie_content('10'); ?>
 		</div>
 
 	</div>
