@@ -44,13 +44,12 @@ function cd_goh_loop() {
 		'order'         => 'DESC',
 		'posts_per_page'=> '12', // overrides posts per page in theme settings
 	);
-	$loop = new WP_Query( $args );
+	$the_query = new WP_Query( $args );
 	
-	if( $loop->have_posts() ) {
+	if ( $the_query->have_posts() ) {
 		// loop through posts
-		while( $loop->have_posts() ): $loop->the_post();
+		while( $the_query->have_posts() ): $the_query->the_post();
 		//Set our counter
-		
 		
 		$filtering_links = array(
 	    	'member-card',
@@ -60,11 +59,11 @@ function cd_goh_loop() {
 		$terms = get_the_terms( $post->ID, 'member' );
 	 
 	    foreach ( $terms as $term ) {
-	        $filtering_links[] = $term->slug;
+	        $filtering_links[] .= $term->slug;
 	    }
 	    
 		if ($i % 2 == 0) :
-			$filtering_links[] = "first";
+			$filtering_links[] .= "first";
 		endif;
 	                        
 	    $filtering = join( " ", $filtering_links );
@@ -73,7 +72,7 @@ function cd_goh_loop() {
     <div id="post-<?php the_ID(); ?>"<?php post_class( $filtering ); ?>>
 		
 		<div class="one-third member-image first">
-			<a href="<?php get_the_permalink() ?>'">
+			<a href="<?php get_the_permalink() ?>">
 		    	<?php the_post_thumbnail(); ?>
 			</a>
 		</div>
@@ -84,20 +83,22 @@ function cd_goh_loop() {
 		</div>
 
 	</div>
-	
-</div>
 
-	<?php
+<?php	
 	//Let's add to our counter
 	$i++;
 	unset($filtering_links);
 	$filtering_links = [];
+?>
+
+	<?php
 	//Close it out!
+	wp_reset_postdata();
 	endwhile;
 	}
 	?>
+	</div>
 <?php
-wp_reset_postdata();
 }
 
 remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );

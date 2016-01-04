@@ -67,8 +67,6 @@ while ( have_posts() ) : the_post();
 		</div>
 
 	</div>
-	
-</div>
 
 	<?php
 	//Let's add to our counter
@@ -77,11 +75,12 @@ while ( have_posts() ) : the_post();
 	$filtering_links = [];
 	//Close it out!
 	endwhile;
+	?>
+	</div>
+<?php
 
 else: ?>
 <p>Sorry, no posts matched your criteria.</p>
-
-
 <?php endif; ?>
 </div>
 </section>
