@@ -72,13 +72,13 @@ function cd_goh_loop() {
     <div id="post-<?php the_ID(); ?>"<?php post_class( $filtering ); ?>>
 		
 		<div class="one-third member-image first">
-			<a href="<?php get_the_permalink() ?>">
+			<a href="<?php the_permalink() ?>">
 		    	<?php the_post_thumbnail(); ?>
 			</a>
 		</div>
 		
 		<div class="two-thirds member-text">
-			<h4><a href="<?php get_the_permalink(); ?>"><?php the_title(); ?></a></h4>
+			<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
 			<?php arkie_content('10'); ?>
 		</div>
 
