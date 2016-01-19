@@ -79,7 +79,7 @@ function cd_goh_loop() {
 		
 		<div class="two-thirds member-text">
 			<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-			<?php arkie_content('10'); ?>
+			<?php echo wp_trim_words( get_the_content(), 10, '...' ); ?>
 		</div>
 
 	</div>
