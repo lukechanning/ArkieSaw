@@ -1,5 +1,8 @@
 <?php
 
+//Remove the standard pagination
+remove_action( 'genesis_after_endwhile', 'genesis_posts_nav' );
+
 //Display our map for clickable sections
 
 add_action('genesis_loop','map_display');
@@ -43,12 +46,13 @@ function cd_goh_loop() {
 		'orderby'       => 'post_date',
 		'order'         => 'DESC',
 		'posts_per_page'=> '12', // overrides posts per page in theme settings
+		'paged' => get_query_var( 'paged' )
 	);
-	$the_query = new WP_Query( $args );
+	global $wp_query; $wp_query = new WP_Query( $args );
 	
-	if ( $the_query->have_posts() ) {
+	if ( $wp_query->have_posts() ) :
 		// loop through posts
-		while( $the_query->have_posts() ): $the_query->the_post();
+		while( $wp_query->have_posts() ): $wp_query->the_post();
 		//Set our counter
 		
 		$filtering_links = array(
@@ -89,14 +93,15 @@ function cd_goh_loop() {
 	$i++;
 	unset($filtering_links);
 	$filtering_links = [];
-?>
-
-	<?php
-	//Close it out!
-	wp_reset_postdata();
-	endwhile;
-	}
+	
+		//Adds the navigation back
+		//Close it out!
+		endwhile;
+		genesis_posts_nav();
+		wp_reset_query();
+	endif;
 	?>
+	
 	</div>
 <?php
 }

@@ -78,6 +78,8 @@ while ( have_posts() ) : the_post();
 	?>
 	</div>
 <?php
+//Adds the navigation back
+genesis_posts_nav();
 
 else: ?>
 <p>Sorry, no posts matched your criteria.</p>
