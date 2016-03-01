@@ -20,7 +20,7 @@ $title = $term->name;
 ?>
 
 <header class="archive-header">
-<h1 class="archive-title">Our Members in <strong><?php echo $title ?></strong></h1>
+<h1 class="archive-title">Our Partners in <strong><?php echo $title ?></strong></h1>
 
 
 <?php
